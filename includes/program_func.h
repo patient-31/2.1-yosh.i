@@ -13,9 +13,9 @@
 
 /** BUILTINS.C */
 int		check_for_builtins(char **line, t_program *c);
-void 	change_directory(char **line, char **env);
-void 	export_to_env(char **line, t_program *c);
-void 	unset_to_env(char **line, t_program *c);
+void 	change_directory_builtin(char **line, char **env);
+void 	export_builtin(char **line, t_program *c);
+void 	unset_builtin(char **line, t_program *c);
 
 /** env.c */
 

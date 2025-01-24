@@ -14,7 +14,7 @@ int check_for_builtins(char **line, t_program *c)
 		cleanup(c);
 	if (strcmp(line[0], "cd") == 0)
 	{
-		change_directory(line, c->env);
+		change_directory_builtin(line, c->env);
 		return (1);
 	}
 	if (strcmp(line[0], "echo") == 0)
@@ -23,12 +23,12 @@ int check_for_builtins(char **line, t_program *c)
 		return 0;
 	if (strcmp(line[0], "export") == 0)
 	{
-		export_to_env(line, c);
+		export_builtin(line, c);
 		return 1;
 	}
 	if (strcmp(line[0], "unset") == 0)
 	{
-		unset_to_env(line, c);
+		unset_builtin(line, c);
 		return 1;
 	}
 	if (strcmp(line[0], "history") == 0)
@@ -42,7 +42,7 @@ int check_for_builtins(char **line, t_program *c)
 	return 0;
 }
 
-void unset_to_env(char **line, t_program *c)
+void unset_builtin(char **line, t_program *c)
 {
 	if (line[1])
 		c->env = unset_env_yosh(line[1], c->env);
@@ -50,7 +50,7 @@ void unset_to_env(char **line, t_program *c)
 		return ;
 }
 
-void export_to_env(char **line, t_program *c)
+void export_builtin(char **line, t_program *c)
 {
 	if (line[1])
 		c->env = set_env_yosh(line[1], c->env);
@@ -58,7 +58,7 @@ void export_to_env(char **line, t_program *c)
 		return ;
 }
 
-void change_directory(char **line, char **env)
+void change_directory_builtin(char **line, char **env)
 {
 	char *token_cat	= concatenate_tokens(&line[1]);
 	if(strcmp(token_cat, "~") == 0)
