@@ -13,3 +13,6 @@ Much of the original code was difficult to reuse, partly due to the strict proje
  - Maintains its own copy of the environment variable list.
 
 ## Future Features
+ - Pipes
+ - Redirections
+ - Configuration for Colours
