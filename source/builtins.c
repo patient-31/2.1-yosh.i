@@ -17,10 +17,6 @@ int check_for_builtins(char **line, t_program *c)
 		change_directory_builtin(line, c->env);
 		return (1);
 	}
-	if (strcmp(line[0], "echo") == 0)
-		return 0;
-	if (strcmp(line[0], "pwd") == 0)
-		return 0;
 	if (strcmp(line[0], "export") == 0)
 	{
 		export_builtin(line, c);
@@ -31,8 +27,6 @@ int check_for_builtins(char **line, t_program *c)
 		unset_builtin(line, c);
 		return 1;
 	}
-	if (strcmp(line[0], "history") == 0)
-		return 0;
 	if (strcmp(line[0], "env") == 0)
 	{
 		print_list_2d(c->env);
