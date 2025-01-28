@@ -8,7 +8,7 @@
 
 #include "../includes/program.h"
 
-void _init(t_program *c, char **envp)
+void init(t_program *c, char **envp)
 {
 
 	c->line_read = NULL;

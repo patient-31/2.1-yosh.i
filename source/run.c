@@ -7,6 +7,7 @@
  */
 
 #include "../includes/program.h"
+#include <sys/wait.h> // included here for linux compatibility
 
 
 void run_cmd(char **expanded, t_program *c)

@@ -31,7 +31,7 @@ int main(int argc, char **argv, char **envp)
 		exit(-1);
 
 
-	_init(c, envp);
+	init(c, envp);
 
 	using_history();
 

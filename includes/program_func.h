@@ -41,7 +41,7 @@ void	save_history(char *filename);
 
 /** init.c */
 
-void _init(t_program *c, char **envp);
+void init(t_program *c, char **envp);
 
 
 
